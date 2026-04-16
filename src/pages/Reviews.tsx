@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Star, Quote, MessageSquare, ThumbsUp, Award, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const reviews = [
   {
@@ -127,31 +128,24 @@ export default function Reviews() {
           ))}
         </div>
 
-        {/* Video Testimonial Placeholder */}
-        <section className="bg-navy-950 rounded-[4rem] p-12 md:p-20 text-center relative overflow-hidden mb-32">
-          <div className="absolute inset-0 bg-grid opacity-10" />
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">Hear from our Partners</h2>
-            <div className="max-w-4xl mx-auto aspect-video bg-navy-900 rounded-[2rem] border border-white/10 flex items-center justify-center group cursor-pointer overflow-hidden">
-              <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-2xl shadow-accent/20">
-                <div className="w-0 h-0 border-t-[12px] border-t-transparent border-l-[20px] border-l-navy-950 border-b-[12px] border-b-transparent ml-1" />
-              </div>
-              <img
-                src="https://picsum.photos/seed/meeting/1200/800"
-                alt="Testimonial Video"
-                className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="text-center">
-          <h2 className="text-3xl font-display font-bold text-navy-950 mb-8">Ready to be our next success story?</h2>
-          <button className="bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105">
-            Get Started Today
-          </button>
+        <section className="bg-navy-950 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent)]" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              Ready to be our next success story?
+            </h2>
+            <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+              Let&apos;s create measurable results for your brand with digital solutions built to
+              perform, scale, and impress.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105"
+            >
+              Get Started Today
+            </Link>
+          </div>
         </section>
       </div>
     </div>

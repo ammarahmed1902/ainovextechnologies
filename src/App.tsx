@@ -17,6 +17,7 @@ import CareerDetail from './pages/CareerDetail';
 import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 import CaseStudies from './pages/CaseStudies';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 import DigitalMarketing from './pages/DigitalMarketing';
 import MobileDevelopment from './pages/MobileDevelopment';
 import VirtualAssistance from './pages/VirtualAssistance';
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="pricing" element={<Pricing />} />
           <Route path="contact" element={<Contact />} />
           <Route path="case-studies" element={<CaseStudies />} />
+          <Route path="case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="digital-marketing" element={<DigitalMarketing />} />
           <Route path="mobile-development" element={<MobileDevelopment />} />
           <Route path="virtual-assistance" element={<VirtualAssistance />} />

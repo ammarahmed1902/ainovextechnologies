@@ -1,11 +1,11 @@
 import { motion } from 'motion/react';
-import { Globe, Zap, ShieldCheck, Database, Layout, Smartphone, ArrowRight, CheckCircle2, Cloud, Code, PenTool, Briefcase, Target, Settings, Users, MessageSquare, TrendingUp } from 'lucide-react';
+import { Megaphone, Smartphone, Briefcase, Target, Code, Search, Layout, PenTool, ShieldCheck, Users, ArrowRight, CheckCircle2, Settings, MessageSquare, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const detailedServices = [
   {
     title: "Digital Marketing",
-    icon: <Globe className="w-12 h-12" />,
+    icon: <Megaphone className="w-12 h-12" />,
     desc: "At Ainovex Technologies, we deliver result-driven digital marketing strategies that help your business reach the right audience at the right time. Our approach starts with understanding your goals, target market, and competition to build a strong marketing foundation.",
     features: ["Search Engine Optimization (SEO)", "Social Media Marketing", "Pay-Per-Click (PPC) Advertising", "Content Marketing"],
     color: "bg-accent/10 text-accent",
@@ -29,7 +29,7 @@ const detailedServices = [
   },
   {
     title: "Sales Funnel Development",
-    icon: <Database className="w-12 h-12" />,
+    icon: <Target className="w-12 h-12" />,
     desc: "We design and optimize sales funnels that guide your audience from first interaction to final purchase with clarity and precision. Every step is carefully planned to reduce drop-offs and increase conversions through compelling content, strategic flow, and user-focused design.",
     features: ["Lead Capture Pages", "Email Automation Sequences", "Conversion Rate Optimization (CRO)", "A/B Testing & Analytics"],
     color: "bg-accent/10 text-accent",
@@ -37,7 +37,7 @@ const detailedServices = [
   },
   {
     title: "Web Development",
-    icon: <Layout className="w-12 h-12" />,
+    icon: <Code className="w-12 h-12" />,
     desc: "Ainovex Technologies develops high-quality websites that combine strong performance, modern design, and seamless functionality. From planning to deployment, every step is focused on creating fast, secure, and scalable web solutions tailored to your business needs.",
     features: ["Custom Web Applications", "E-commerce Solutions", "Progressive Web Apps (PWA)", "API Integrations"],
     color: "bg-accent/10 text-accent",
@@ -45,7 +45,7 @@ const detailedServices = [
   },
   {
     title: "Search Engine Optimization",
-    icon: <Zap className="w-12 h-12" />,
+    icon: <Search className="w-12 h-12" />,
     desc: "We help businesses improve their search visibility by building strong SEO strategies that actually deliver results. Our process starts with deep keyword research, competitor analysis, and technical optimization to ensure your website is fully search-engine friendly. ",
     features: ["Keyword Research", "On-Page Optimization", "Off-Page Optimization", "Technical SEO"],
     color: "bg-accent/10 text-accent",
@@ -53,7 +53,7 @@ const detailedServices = [
   },
   {
     title: "UI UX Design",
-    icon: <Cloud className="w-12 h-12" />,
+    icon: <Layout className="w-12 h-12" />,
     desc: "We create intuitive and visually appealing UI/UX designs that focus on user behavior, clarity, and seamless navigation. Every interface is crafted to enhance engagement and make digital interactions simple and enjoyable. Our process includes research, wireframing, prototyping, and detailed design execution to ensure every element serves a purpose.",
     features: ["User Research & Strategy", "Interactive Prototyping", "Responsive Web Design", "Design System Development"],
     color: "bg-accent/10 text-accent",
@@ -61,7 +61,7 @@ const detailedServices = [
   },
   {
     title: "Graphic Design",
-    icon: <Code className="w-12 h-12" />,
+    icon: <PenTool className="w-12 h-12" />,
     desc: "At Ainovex Technologies, we create visually powerful graphic designs that communicate your brand message with clarity and impact. Our process starts by understanding your brand identity, audience, and goals to ensure every design feels purposeful. From concept creation to final execution, we focus on creativity, consistency, and modern aesthetics.",
     features: ["Logo Design", "Marketing Materials", "Digital Graphics", "Brand Consistency"],
     color: "bg-accent/10 text-accent",
@@ -69,7 +69,7 @@ const detailedServices = [
   },
   {
     title: "Software Quality Assurance",
-    icon: <PenTool className="w-12 h-12" />,
+    icon: <ShieldCheck className="w-12 h-12" />,
     desc: "We focus on delivering software that performs smoothly, securely, and without errors. Our QA process includes detailed testing at every stage, from functionality and usability to performance and security. We identify issues early, ensuring your product meets the highest quality standards before launch.",
     features: ["Manual Testing", "Automated Testing", "Performance Testing", "Security Testing"],
     color: "bg-accent/10 text-accent",
@@ -77,7 +77,7 @@ const detailedServices = [
   },
   {
     title: "Lead Generation",
-    icon: <ShieldCheck className="w-12 h-12" />,
+    icon: <Users className="w-12 h-12" />,
     desc: "We at Ainovex Technologies create powerful lead generation systems that attract the right audience and convert interest into real business opportunities. Our approach focuses on understanding your target market, crafting compelling offers, and building strategies that drive consistent inbound leads.",
     features: ["Targeted Lead Campaigns", "SEO-Driven Lead Generation", "Social Media Lead Generation", "Content Marketing for Leads"],
     color: "bg-accent/10 text-accent",
@@ -207,12 +207,22 @@ export default function Services() {
         </section>
 
         {/* CTA */}
-        <section className="text-center">
-          <h2 className="text-4xl font-display font-bold text-navy-950 mb-8">Ready to transform your ideas into <br /> powerful digital solutions?</h2>
-          <p className="text-slate-600 mb-12 max-w-2xl mx-auto">Let’s build something impactful together and grow your business with confidence.</p>
-          <button className="bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105">
-            Schedule a Consultation
-          </button>
+        <section className="bg-navy-950 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent)]" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              Ready to transform your ideas into <br /> powerful digital solutions?
+            </h2>
+            <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+              Let&apos;s build something impactful together and grow your business with confidence.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-flex bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105"
+            >
+              Schedule a Consultation
+            </Link>
+          </div>
         </section>
       </div>
     </div >

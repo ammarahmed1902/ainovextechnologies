@@ -140,12 +140,23 @@ export default function Team() {
         </section>
 
         {/* CTA */}
-        <section className="text-center">
-          <h2 className="text-4xl font-display font-bold text-navy-950 mb-8">Want to work with us?</h2>
-          <p className="text-slate-600 mb-12 max-w-2xl mx-auto">We're always looking for talented individuals who share our passion for innovation.</p>
-          <Link to="/contact" className="bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105 inline-block">
-            Get in Touch
-          </Link>
+        <section className="bg-navy-950 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(45,212,191,0.1),transparent)]" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">
+              Want to work with us?
+            </h2>
+            <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+              We&apos;re always looking for talented individuals who share our passion for
+              innovation.
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105"
+            >
+              Get in Touch
+            </Link>
+          </div>
         </section>
       </div>
     </div>

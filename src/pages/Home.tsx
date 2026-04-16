@@ -1,11 +1,33 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2, Globe, Zap, ShieldCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown, Globe, Megaphone, Search, Users, Zap, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import AnimatedBackground from '../components/AnimatedBackground';
 import img from "../public/assets/img/whyChoose.jpg";
 import img2 from "../public/assets/img/OfficeMeeting.jpeg";
 
 export default function Home() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      q: "Can you handle both small and large projects?",
+      a: "Yes, at Ainovex, we are equipped to handle projects of all sizes. Whether it’s a small task or a large-scale solution, we ensure the same level of quality and attention."
+    },
+    {
+      q: "How long does a typical project take?",
+      a: "Project timelines vary based on scope and complexity. We always provide a clear timeline upfront and ensure timely delivery without compromising quality."
+    },
+    {
+      q: "Do you offer ongoing support after project delivery?",
+      a: "Absolutely. We provide ongoing support and maintenance to keep your systems running smoothly and updated as your business grows."
+    },
+    {
+      q: "Do you sign contracts before starting work?",
+      a: "Yes, we believe in transparency and professionalism. We finalize all project details through a clear agreement before starting any work."
+    }
+  ];
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -247,9 +269,24 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Cloud Architecture", icon: <Globe className="w-8 h-8" /> },
-              { title: "AI & Machine Learning", icon: <Zap className="w-8 h-8" /> },
-              { title: "Cybersecurity", icon: <ShieldCheck className="w-8 h-8" /> }
+              {
+                title: "Digital Marketing",
+                href: "/digital-marketing",
+                desc: "At Ainovex Technologies, we deliver result-driven digital marketing strategies to reach the right audience at the right time.",
+                icon: <Megaphone className="w-8 h-8" />
+              },
+              {
+                title: "Search Engine Optimization",
+                href: "/seo",
+                desc: "We help businesses improve search visibility with strong SEO strategies. At Ainovex Technologies, we use keyword research.",
+                icon: <Search className="w-8 h-8" />
+              },
+              {
+                title: "Lead Generation",
+                href: "/lead-generation",
+                desc: "We at Ainovex Technologies build lead generation systems that attract the right audience and turn interest into business opportunities.",
+                icon: <Users className="w-8 h-8" />
+              }
             ].map((service, i) => (
               <motion.div
                 key={i}
@@ -260,8 +297,8 @@ export default function Home() {
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold text-navy-950 mb-4">{service.title}</h3>
-                <p className="text-slate-500 mb-8">Scalable and secure infrastructure designed for global enterprise demands.</p>
-                <Link to="/services" className="text-navy-950 font-bold flex items-center gap-2 group-hover:text-accent transition-colors">
+                <p className="text-slate-500 mb-8">{service.desc}</p>
+                <Link to={service.href} className="text-navy-950 font-bold flex items-center gap-2 group-hover:text-accent transition-colors">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
@@ -275,13 +312,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <h2 className="font-display text-4xl font-bold mb-8">Uncompromising Reliability</h2>
+              <h2 className="font-display text-4xl font-bold mb-8">Proven Performance</h2>
               <div className="space-y-6">
                 {[
-                  "ISO 27001 & SOC2 Type II Certified",
-                  "99.99% Uptime SLA Guarantee",
-                  "Dedicated Enterprise Support Teams",
-                  "Seamless Integration Ecosystem"
+                  "Consistent delivery of quality results",
+                  "Fast execution with accurate outcomes",
+                  "High client satisfaction across projects",
+                  "Scalable solutions for all businesses"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <CheckCircle2 className="text-accent w-6 h-6 shrink-0" />
@@ -296,16 +333,16 @@ export default function Home() {
                 <div className="text-sm text-slate-400 uppercase tracking-widest">Global Clients</div>
               </div>
               <div className="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
-                <div className="text-5xl font-bold text-accent mb-2">15+</div>
-                <div className="text-sm text-slate-400 uppercase tracking-widest">Years Experience</div>
+                <div className="text-5xl font-bold text-accent mb-2">1200+</div>
+                <div className="text-sm text-slate-400 uppercase tracking-widest">Projects Completed</div>
               </div>
               <div className="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
-                <div className="text-5xl font-bold text-accent mb-2">98%</div>
-                <div className="text-sm text-slate-400 uppercase tracking-widest">Retention Rate</div>
+                <div className="text-5xl font-bold text-accent mb-2">950+</div>
+                <div className="text-sm text-slate-400 uppercase tracking-widest">Successful Deployments</div>
               </div>
               <div className="bg-white/5 p-8 rounded-2xl border border-white/10 text-center">
-                <div className="text-5xl font-bold text-accent mb-2">24/7</div>
-                <div className="text-sm text-slate-400 uppercase tracking-widest">Active Monitoring</div>
+                <div className="text-5xl font-bold text-accent mb-2">300+</div>
+                <div className="text-sm text-slate-400 uppercase tracking-widest">Repeat Clients</div>
               </div>
             </div>
           </div>
@@ -447,17 +484,31 @@ export default function Home() {
             <p className="text-slate-600 text-lg">Everything you need to know about our process and solutions.</p>
           </div>
           <div className="space-y-4">
-            {[
-              { q: "Can you handle both small and large projects?", a: "Yes, at Ainovex, we are equipped to handle projects of all sizes. Whether it’s a small task or a large-scale solution, we ensure the same level of quality and attention." },
-              { q: "How long does a typical project take?", a: "Project timelines vary based on scope and complexity. We always provide a clear timeline upfront and ensure timely delivery without compromising quality." },
-              { q: "Do you offer ongoing support after project delivery?", a: "Absolutely. We provide ongoing support and maintenance to keep your systems running smoothly and updated as your business grows." },
-              { q: "Do you sign contracts before starting work?", a: "Yes, we believe in transparency and professionalism. We finalize all project details through a clear agreement before starting any work." }
-            ].map((faq, i) => (
-              <div key={i} className="bg-white rounded-2xl border border-slate-100 p-6">
-                <h4 className="font-bold text-navy-950 mb-3">{faq.q}</h4>
-                <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
+            {faqs.map((faq, i) => {
+              const isOpen = openFaqIndex === i;
+
+              return (
+                <div key={i} className="bg-white rounded-2xl border border-slate-100 overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaqIndex(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 p-6 text-left"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${i}`}
+                  >
+                    <h4 className="font-bold text-navy-950">{faq.q}</h4>
+                    <ChevronDown
+                      className={`w-5 h-5 text-accent transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+                  {isOpen ? (
+                    <div id={`faq-answer-${i}`} className="px-6 pb-6">
+                      <p className="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
+                    </div>
+                  ) : null}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -140,7 +140,7 @@ export default function MobileDevelopment() {
           <div className="relative max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {[
-                { step: "1", title: "Discovery", desc: "Understanding goals and requirements.", icon: <MessageSquare /> },
+                { step: "1", title: "Discovery", desc: "Character Counter is a 100% free online character count calculator that's simple to use. Sometimes users", icon: <MessageSquare /> },
                 { step: "2", title: "Strategy", desc: "Defining architecture and roadmap.", icon: <Map /> },
                 { step: "3", title: "Development", desc: "Building the application features.", icon: <Settings /> },
                 { step: "4", title: "Testing", desc: "Quality assurance and optimization.", icon: <CheckCircle /> },
