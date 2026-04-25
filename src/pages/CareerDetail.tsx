@@ -183,7 +183,7 @@ export default function CareerDetail() {
     };
 
     try {
-      console.log('Job application submitted', payload);
+      void payload;
 
       await new Promise((resolve) => {
         window.setTimeout(resolve, 600);
@@ -196,8 +196,7 @@ export default function CareerDetail() {
       if (resumeInputRef.current) {
         resumeInputRef.current.value = '';
       }
-    } catch (error) {
-      console.error('Unable to submit application', error);
+    } catch {
       setSubmissionMessage('Something went wrong while submitting your application. Please try again.');
     } finally {
       setIsSubmitting(false);

@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0D1B2A"/>
+  <rect x="40" y="40" width="1120" height="550" rx="32" fill="url(#paint0_radial)"/>
+  <circle cx="978" cy="113" r="180" fill="#2196F3" fill-opacity="0.16"/>
+  <circle cx="203" cy="504" r="200" fill="#00C2FF" fill-opacity="0.09"/>
+  <rect x="118" y="118" width="104" height="104" rx="26" fill="#10273D" stroke="#00C2FF" stroke-opacity="0.22"/>
+  <path d="M147 201L170 136L193 201" stroke="url(#paint1_linear)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M158 173H182" stroke="#00C2FF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="170" cy="136" r="5" fill="#00C2FF"/>
+  <circle cx="147" cy="201" r="5" fill="#00C2FF"/>
+  <circle cx="193" cy="201" r="5" fill="#00C2FF"/>
+  <text x="258" y="163" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">AINOVEX</text>
+  <text x="259" y="198" fill="#00C2FF" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="6">TECHNOLOGIES</text>
+  <text x="118" y="308" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">
+    AI-Powered Software Solutions
+  </text>
+  <text x="118" y="372" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="700">
+    for Enterprise &amp; SaaS
+  </text>
+  <text x="118" y="447" fill="#C1CFDB" font-family="Arial, Helvetica, sans-serif" font-size="28">
+    Cutting-edge AI, cloud, and enterprise platforms trusted by global businesses.
+  </text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 315) rotate(90) scale(388 695.176)">
+      <stop stop-color="#1A3A5C"/>
+      <stop offset="1" stop-color="#0D1B2A"/>
+    </radialGradient>
+    <linearGradient id="paint1_linear" x1="147" y1="136" x2="193" y2="201" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00C2FF"/>
+      <stop offset="1" stop-color="#2196F3"/>
+    </linearGradient>
+  </defs>
+</svg>

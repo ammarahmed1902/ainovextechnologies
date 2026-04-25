@@ -5,51 +5,69 @@ import { Link } from 'react-router-dom';
 
 const subServices = [
   {
-    title: "Lead Capture Systems",
+    title: "Funnel Strategy & Planning",
     icon: <Target className="w-10 h-10" />,
-    desc: "We design high-converting landing pages and lead capture systems that attract your ideal audience and turn them into qualified prospects.",
-    features: ["Landing Page Design", "Lead Magnets", "Form Optimization", "Visitor Tracking"],
+    desc: "We design strategic sales funnels that guide prospects through every stage, from awareness to conversion, ensuring higher engagement, better targeting, and increased revenue through optimized planning.",
+    features: ["Audience Segmentation", "Funnel Mapping", "Conversion Path Design", "VOffer Positioning"],
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Email Automation Funnels",
+    title: "Landing Page Design",
     icon: <Mail className="w-10 h-10" />,
-    desc: "Automated email sequences that nurture leads, build trust, and drive sales on autopilot. We build follow-up systems that never miss an opportunity.",
-    features: ["Drip Campaigns", "Behavioral Triggers", "Segmentation", "High-engagement Copy"],
+    desc: "We design high-converting landing pages that capture attention, guide user behavior, and turn visitors into leads through persuasive layouts, clear messaging, and optimized user experience strategies.",
+    features: ["Conversion Focus Design", "CTA Optimization", "Mobile Responsive Layout", "A/B Testing Setup"],
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Conversion Rate Optimization",
+    title: "Lead Capture Systems",
     icon: <TrendingUp className="w-10 h-10" />,
-    desc: "Data-driven improvements to your existing funnel. We analyze user behavior and test different elements to ensure maximum ROI at every step.",
-    features: ["A/B Testing", "Heatmap Analysis", "Funnel Audits", "User Journey Mapping"],
+    desc: "We build powerful lead capture systems that attract, engage, and collect potential customer data through optimized forms, landing pages, and smart funnels designed to increase conversion opportunities.",
+    features: ["Data Validation Checks", "Lead Source Tracking", "Form Abandonment Reduction", "CRM Integration Setup"],
     color: "bg-green-500/10 text-green-600"
   },
   {
-    title: "Checkout & Sales Integration",
+    title: "Email Automation Funnels",
     icon: <MousePointerClick className="w-10 h-10" />,
-    desc: "Seamless integration with payment gateways and checkout systems. We ensure a smooth buying experience that reduces friction and cart abandonment.",
-    features: ["Payment Integrations", "Upsell/Downsell Flows", "Order Tracking", "Secure Transactions"],
+    desc: "We design intelligent email automation funnels that nurture leads, build trust, and guide prospects through each stage of the buying journey using personalized, timely, and behavior-driven email sequences.",
+    features: ["Segmentation Setup", "Drip Campaign Creation", "Conversion Tracking", "List Cleaning & Management"],
     color: "bg-orange-500/10 text-orange-600"
+  },
+  {
+    title: "Conversion Optimization",
+    icon: <TrendingUp className="w-10 h-10" />,
+    desc: "We improve each stage of the sales funnel to convert more visitors into customers. By enhancing user journey, messaging, and engagement points, we help boost conversions and overall revenue efficiency.",
+    features: ["A/B Testing Setup", "Checkout Flow Optimization", "CTA Performance Analysis", "Conversion Heatmaps Tracking"],
+    color: "bg-green-500/10 text-green-600"
+  },
+  {
+    title: "Funnel Analytics & Tracking",
+    icon: <TrendingUp className="w-10 h-10" />,
+    desc: "We analyze every stage of your sales funnel using advanced tracking tools to understand user behavior, improve conversions, and identify drop-off points for better performance and higher revenue growth.",
+    features: ["Stage Performance Mapping", "Click Path Analysis", "Engagement Depth Tracking", "Revenue Attribution Review"],
+    color: "bg-purple-500/10 text-purple-600"
   }
 ];
 
 const faqs = [
   {
-    question: "What is a sales funnel?",
-    answer: "A sales funnel is a strategic journey that guides potential customers from first hearing about your brand to making a final purchase."
+    question: "Do you create custom sales funnels?",
+    answer: "Yes, we build fully custom sales funnels based on your business goals, audience, and offer strategy."
   },
   {
-    question: "Do I need a website to have a sales funnel?",
-    answer: "Not necessarily. We can build dedicated landing pages and funnels that work independently or integrate with your existing site."
+    question: "How long does it take to build a sales funnel?",
+    answer: "It usually takes 1–3 weeks, depending on complexity, pages, and automation requirements."
   },
   {
-    question: "How long does it take to see results from a funnel?",
-    answer: "While optimization is ongoing, well-built funnels often start showing lead and conversion results within the first few weeks of traffic."
+    question: "Do you provide ongoing funnel optimization?",
+    answer: "Yes, we continuously optimize funnels to improve performance and increase conversion rates."
   },
   {
-    question: "Can you integrate the funnel with my CRM?",
-    answer: "Yes, we integrate with most major CRMs like HubSpot, Salesforce, and ActiveCampaign to ensure your leads are managed effectively."
+    question: "Do you include upsell and downsell strategies?",
+    answer: "Yes, we design upsell and downsell flows to maximize revenue from each customer."
+  },
+  {
+    question: "How often should a sales funnel be updated?",
+    answer: "We recommend reviewing and updating funnels every few months based on performance data and market changes."
   }
 ];
 
@@ -63,10 +81,11 @@ export default function SalesFunnel() {
   const scrollX = useTransform(scrollYProgress, [0, 1], [-500, 200]);
 
   const components = [
-    { title: "Awareness", desc: "Attracting traffic through strategic content and ads." },
-    { title: "Interest", desc: "Capturing details through engaging lead magnets." },
-    { title: "Decision", desc: "Nurturing prospects with high-value email sequences." },
-    { title: "Action", desc: "Converting leads into paying customers with optimized checkouts." }
+    { title: "SaaS & Technology", desc: "We build funnels that drive SaaS leads and boost trial conversions fast." },
+    { title: "E-Commerce & Retail", desc: "Our funnels convert visitors into buyers with upsells and checkout flow." },
+    { title: "Coaching & Consulting", desc: "We help coaches attract clients using webinars, leads, and automation." },
+    { title: "Real Estate", desc: "We capture property leads using landing pages and automated follow-ups." },
+    { title: "Digital Marketing Agencies", desc: "Our funnels help agencies generate leads and scale client acquisition." }
   ];
 
   return (
@@ -86,7 +105,7 @@ export default function SalesFunnel() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-display font-bold text-navy-950 mb-8"
           >
-            Turn Your Traffic Into <span className="text-accent">Scaling Revenue</span>
+            High-Converting <span className="text-accent">Sales Funnels </span>For Fast Growth
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +113,7 @@ export default function SalesFunnel() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
           >
-            At Ainovex Technologies, we design and optimize high-converting sales funnels that guide your customers through a seamless journey from awareness to purchase.
+            We design and optimize sales funnels that guide users step by step, improve engagement, and turn traffic into customers through strategic planning, testing, and ongoing performance improvements.
           </motion.p>
         </div>
 
@@ -131,20 +150,20 @@ export default function SalesFunnel() {
         {/* Process Flow Section */}
         <div className="mb-32">
           <div className="text-center mb-24">
-            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our Funnel Blueprint</h2>
+            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our Workflow: From Idea to Impact</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              A systematic approach to building a reliable revenue-generating machine.
+              Clear steps guide us in achieving fast and accurate results.
             </p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {[
-                { step: "1", title: "Strategy", desc: "Mapping the customer journey.", icon: <Map /> },
-                { step: "2", title: "Design", desc: "Creating high-converting pages.", icon: <Database /> },
-                { step: "3", title: "Automation", desc: "Setting up email and triggers.", icon: <Settings /> },
-                { step: "4", title: "Launch", desc: "Deploying and driving traffic.", icon: <Zap /> },
-                { step: "5", title: "Optimize", desc: "Analyzing data and scaling.", icon: <CheckCircle /> }
+                { step: "1", title: "Research", desc: "We study audience behavior, market trends, and competitors to identify strong funnel opportunities.", icon: <Map /> },
+                { step: "2", title: "Strategy", desc: "Our planning defines funnel stages, customer journey, and conversion-focused growth pathways.", icon: <Database /> },
+                { step: "3", title: "Design", desc: "We design a funnel structure with optimized pages and a smooth user experience flow for conversions.", icon: <Settings /> },
+                { step: "4", title: "Execution", desc: "Campaigns run across platforms, guiding users through each funnel stage smoothly and effectively.", icon: <Zap /> },
+                { step: "5", title: "Optimization", desc: "Performance is tracked and improved continuously to increase conversions and maximize revenue growth.", icon: <CheckCircle /> }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -167,7 +186,7 @@ export default function SalesFunnel() {
 
         {/* Components Section */}
         <div ref={scrollRef} className="mb-32 overflow-hidden">
-          <h2 className="text-4xl font-display font-bold text-navy-950 mb-12">The 4 Pillars of Success</h2>
+          <h2 className="text-4xl font-display font-bold text-navy-950 mb-12">Industries We’ve Worked With</h2>
           <motion.div style={{ x: scrollX }} className="flex gap-8">
             {[...components, ...components].map((comp, i) => (
               <div key={i} className="min-w-[300px] p-8 bg-navy-950 text-white rounded-[2rem]">
@@ -211,9 +230,9 @@ export default function SalesFunnel() {
         {/* CTA */}
         <section className="bg-navy-950 rounded-[4rem] p-12 md:p-20 text-center text-white relative overflow-hidden">
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Ready to Automate Your Sales?</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Getting traffic but not converting it into customers?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-12">
-              Let's build a sales funnel that works for you 24/7.
+              Let’s build a powerful sales funnel that guides your visitors step-by-step and converts them into paying clients with ease and strategy.
             </p>
             <Link to="/contact" className="inline-flex items-center bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105 gap-2">
               Build My Funnel <ArrowRight className="w-5 h-5" />

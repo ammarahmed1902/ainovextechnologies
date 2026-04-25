@@ -1,77 +1,77 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { Search, Megaphone, Mail, MousePointerClick, ArrowRight, CheckCircle2, PenTool, TrendingUp, MessageSquare, Map, Settings, CheckCircle, Headset, Target, Activity, Briefcase, Plus, Minus } from 'lucide-react';
+import { Shield, Lock, Activity, Database, AlertTriangle, Search, Terminal, ArrowRight, CheckCircle2, MessageSquare, Map, Settings, CheckCircle, Headset, HardDrive, Plus, Minus, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const marketingServices = [
+const securityServices = [
   {
-    title: "Search Engine Optimization (SEO)",
-    icon: <Search className="w-10 h-10" />,
-    desc: "Achieve higher rankings and drive organic traffic that converts. Our SEO strategies are built on deep keyword research, technical optimization, and high-quality content creation tailored to your industry.",
-    features: ["On-Page & Off-Page SEO", "Technical SEO Audits", "Local SEO Optimization", "Keyword & Competitor Research"],
+    title: "Network Security",
+    icon: <Lock className="w-10 h-10" />,
+    desc: "We protect your internal networks from unauthorized access and attacks. Our multi-layered defense strategy includes advanced firewalls, VPNs, and secure wireless configuration to keep your data flowing safely.",
+    features: ["Intrusion Prevention Systems", "Firewall Management", "Secure VPN Solutions", "Wireless Security Audits"],
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Social Media Marketing",
-    icon: <Megaphone className="w-10 h-10" />,
-    desc: "Build a loyal community and amplify your brand's voice. We create tailored social media strategies that engage your audience, boost brand awareness, and increase meaningful interactions across all platforms.",
-    features: ["Platform-specific Strategies", "Community Management", "Content Creation & Curation", "Social Media Analytics"],
+    title: "Vulnerability Assessment",
+    icon: <Search className="w-10 h-10" />,
+    desc: "Stay ahead of threats with proactive identification of security gaps. We perform deep scans and penetration tests to uncover weaknesses in your infrastructure before malicious actors can find them.",
+    features: ["Risk Identification", "Penetration Testing", "Security Audits", "Compliance Checks"],
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Pay-Per-Click (PPC) Advertising",
-    icon: <MousePointerClick className="w-10 h-10" />,
-    desc: "Maximize your ROI with targeted ad campaigns. We design, launch, and optimize paid ads on Google, Meta, and LinkedIn to ensure your brand reaches high-intent buyers exactly when they are looking for you.",
-    features: ["Google Ads & Retargeting", "Social Media Ads (Meta, LinkedIn)", "A/B Testing & Optimization", "Conversion Rate Optimization"],
+    title: "Endpoint Protection",
+    icon: <Shield className="w-10 h-10" />,
+    desc: "Every device is a potential entry point. We secure your laptops, mobile devices, and servers with advanced antivirus, anti-malware, and device management systems to prevent breaches at the source.",
+    features: ["Device Management", "Antivirus & EDR", "Patch Management", "Mobile Security"],
     color: "bg-green-500/10 text-green-600"
   },
   {
-    title: "Email Marketing",
-    icon: <Mail className="w-10 h-10" />,
-    desc: "Turn leads into loyal customers with personalized, automated email journeys. We craft compelling email campaigns that nurture your audience, keep them informed, and drive consistent sales.",
-    features: ["Automated Drip Campaigns", "Newsletter Management", "Audience Segmentation", "Performance Tracking"],
+    title: "Data Encryption & Privacy",
+    icon: <Database className="w-10 h-10" />,
+    desc: "Protect your most valuable assets with high-level encryption. We ensure that your sensitive business data and customer information remain inaccessible to unauthorized parties, even in the event of a breach.",
+    features: ["AES-256 Encryption", "Data Loss Prevention", "Secure Cloud Storage", "Privacy Compliance"],
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Content Marketing & Strategy",
-    icon: <PenTool className="w-10 h-10" />,
-    desc: "Engage your audience with high-quality, valuable content. We develop and distribute articles, videos, and graphics that establish your brand as an authority and drive profitable customer action.",
-    features: ["Blog & Article Writing", "Video Marketing", "Infographics & Visuals", "Distribution Strategy"],
-    color: "bg-teal-500/10 text-teal-600"
+    title: "Incident Response",
+    icon: <AlertTriangle className="w-10 h-10" />,
+    desc: "In the event of a security incident, speed is everything. Our rapid response team works to contain the threat, minimize damage, and restore your operations as quickly as possible with minimal data loss.",
+    features: ["Crisis Management", "Threat Containment", "System Recovery", "Forensic Analysis"],
+    color: "bg-rose-500/10 text-rose-600"
   },
   {
-    title: "Conversion Rate Optimization (CRO)",
-    icon: <TrendingUp className="w-10 h-10" />,
-    desc: "Maximize the value of your existing traffic. We analyze user behavior and implement data-driven changes to your website or landing pages to significantly increase the percentage of visitors who convert.",
-    features: ["A/B & Multivariate Testing", "User Behavior Analytics", "Landing Page Optimization", "Funnel Analysis"],
-    color: "bg-rose-500/10 text-rose-600"
+    title: "Security Monitoring",
+    icon: <Activity className="w-10 h-10" />,
+    desc: "Cyber threats never sleep, and neither do we. We provide 24/7 continuous monitoring of your systems to detect anomalies and respond to potential threats in real-time, ensuring constant protection.",
+    features: ["24/7 SOC Services", "Log Analysis", "Real-time Alerts", "Threat Intel Integration"],
+    color: "bg-teal-500/10 text-teal-600"
   }
 ];
 
 const faqs = [
   {
-    question: "How long does it take to see results from digital marketing?",
-    answer: "Results usually start appearing within a few weeks, but significant growth typically takes 2–3 months, depending on strategy and goals."
+    question: "Why does my small business need cybersecurity?",
+    answer: "Cybercriminals often target small businesses because they typically have fewer security measures in place. A single breach can be devastating, making proactive protection essential for any size organization."
   },
   {
-    question: "Do you provide regular reports and performance updates?",
-    answer: "Yes, we provide clear and regular reports so you can track performance, progress, and campaign effectiveness at every stage."
+    question: "What is a vulnerability assessment?",
+    answer: "It is a systematic review of security weaknesses in an information system. It evaluates if the system is susceptible to any known vulnerabilities and recommends the best mitigation strategies."
   },
   {
-    question: "How much does your digital marketing service cost?",
-    answer: "Pricing depends on your business needs, goals, and campaign scope. We offer flexible plans tailored to different budgets."
+    question: "How do you handle data privacy and compliance?",
+    answer: "We strictly follow industry-standard security frameworks and compliance regulations (such as GDPR or HIPAA where applicable) to ensure all data is handled, stored, and protected with the highest integrity."
   },
   {
-    question: "What makes your digital marketing service different?",
-    answer: "We focus on data-driven strategies, personalized planning, and real business outcomes instead of generic or short-term marketing tactics."
+    question: "Do you offer 24/7 security monitoring services?",
+    answer: "Yes, we provide round-the-clock monitoring and support. Our systems and security experts are always active, ensuring any suspicious activity is detected and addressed immediately."
   },
   {
-    question: "How do I get started with your digital marketing service?",
-    answer: "Simply reach out to us with your requirements, and our team will guide you through a quick onboarding and strategy setup process."
+    question: "How often should we perform security audits?",
+    answer: "We recommend comprehensive security audits at least once or twice a year, or whenever there are significant changes to your infrastructure or software."
   }
 ];
 
-export default function DigitalMarketing() {
+export default function CyberSecurity() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -83,23 +83,23 @@ export default function DigitalMarketing() {
   const industries = [
     {
       title: "Technology & IT Services",
-      desc: "We’ve built scalable digital platforms for fast-growing tech companies, focusing on performance, clean architecture, and seamless user experiences. Our approach supports innovation-driven teams with solutions that adapt as their products and services evolve over time."
+      desc: "We deliver advanced security for tech platforms, ensuring that clean architecture is backed by robust defense mechanisms that protect both intellectual property and user data from evolving digital threats."
+    },
+    {
+      title: "Finance & Fintech",
+      desc: "In the financial sector, security is non-negotiable. We implement high-level encryption and rigorous access controls to protect sensitive transactions and maintain compliance with strict industry regulations."
+    },
+    {
+      title: "Healthcare & Pharmaceuticals",
+      desc: "We help healthcare providers protect patient records and maintain data privacy. Our focus is on building secure online presences that enhance credibility while strictly adhering to privacy standards."
     },
     {
       title: "E-Commerce & Retail",
-      desc: "In the online retail space, we’ve delivered conversion-focused digital experiences that help brands attract, engage, and retain customers. Our work emphasizes smooth shopping journeys, strong visual presentation, and strategies that directly improve sales performance."
+      desc: "For online retailers, we secure checkout processes and customer databases. Our strategies prevent data theft and build consumer trust, ensuring that smooth shopping journeys are always safe."
     },
     {
-      title: "Healthcare & Wellness",
-      desc: "We’ve supported healthcare and wellness providers by creating clear, trustworthy, and easy-to-navigate digital solutions. The focus has always been on improving patient communication, simplifying information access, and building a reliable online presence that enhances credibility."
-    },
-    {
-      title: "Real Estate",
-      desc: "For property-focused businesses, we’ve developed engaging platforms designed to present listings effectively and generate quality inquiries. Our experience includes creating structured layouts, impactful visuals, and lead-driven strategies that connect sellers with serious buyers."
-    },
-    {
-      title: "Education & Training",
-      desc: "We’ve also worked with educational organizations to improve how they connect with students digitally. Our solutions help streamline course presentation, strengthen online visibility, and create user-friendly systems that support enrollment and engagement growth."
+      title: "Legal & Professional Services",
+      desc: "We protect confidential client information for legal firms and consultants. Our secure document handling and robust communication channels ensure that sensitive data stays within the firm."
     }
   ];
 
@@ -113,14 +113,14 @@ export default function DigitalMarketing() {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-bold tracking-widest uppercase mb-6"
           >
-            Digital Marketing
+            Cyber Security
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-display font-bold text-navy-950 mb-8"
           >
-            Drive <span className="text-accent">Real Growth</span> With Data-Driven Marketing
+            Protect Your Business From <span className="text-accent">Digital Threats</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -128,13 +128,13 @@ export default function DigitalMarketing() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
           >
-            We don't just increase your visibility; we build strategic digital marketing campaigns that attract the right audience, generate high-quality leads, and convert them into loyal customers.
+            At Ainovex Technologies, we provide reliable cybersecurity solutions to protect your business from evolving threats. We secure systems, detect vulnerabilities, and ensure continuous monitoring to keep your data safe and operations protected.
           </motion.p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-32">
-          {marketingServices.map((service, i) => (
+          {securityServices.map((service, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -162,24 +162,23 @@ export default function DigitalMarketing() {
           ))}
         </div>
 
-
         {/* Process Flow Section */}
         <div className="mb-32">
           <div className="text-center mb-24">
-            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our Process Flow</h2>
+            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our Security Process</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              A structured and transparent approach from start to finish.
+              A structured and comprehensive approach to identifying and mitigating risks.
             </p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {[
-                { step: "1", title: "Discussion", desc: "Understand client needs, objectives, and goals.", icon: <MessageSquare /> },
-                { step: "2", title: "Planning", desc: "Strategize the approach, timeline, and resources required.", icon: <Map /> },
-                { step: "3", title: "Implementation", desc: "Execute the plan, developing or delivering the solution.", icon: <Settings /> },
-                { step: "4", title: "Testing", desc: "Validate the solution for effectiveness and reliability.", icon: <CheckCircle /> },
-                { step: "5", title: "Support", desc: "Provide ongoing assistance, maintenance, and training.", icon: <Headset /> }
+                { step: "1", title: "Discovery", desc: "Analyze existing infrastructure and identify critical assets.", icon: <MessageSquare /> },
+                { step: "2", title: "Assessment", desc: "Deep dive into potential vulnerabilities and threat vectors.", icon: <Search /> },
+                { step: "3", title: "Hardening", desc: "Implement defenses, encryption, and protocols to secure systems.", icon: <Settings /> },
+                { step: "4", title: "Monitoring", desc: "Establish round-the-clock surveillance and anomaly detection.", icon: <Activity /> },
+                { step: "5", title: "Response", desc: "Maintain ready-to-act protocols for any security incidents.", icon: <Terminal /> }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -199,9 +198,10 @@ export default function DigitalMarketing() {
             </div>
           </div>
         </div>
+
         {/* Industries Section */}
         <div ref={scrollRef} className="mb-32 relative">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-12 text-left tracking-tight">Industries We’ve Worked With</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-12 text-left tracking-tight">Industries We Protect</h1>
           <div className="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden py-4">
             <motion.div style={{ x: scrollX }} className="flex gap-6 md:gap-8 px-6 md:px-12 w-max cursor-grab active:cursor-grabbing">
               {industries.map((ind, i) => (
@@ -219,15 +219,13 @@ export default function DigitalMarketing() {
           </div>
         </div>
 
-
-        {/* Specialized Technologies (Auto Scrolling) */}
+        {/* Specialized Technologies */}
         <div className="mb-32 w-[100vw] relative left-1/2 -translate-x-1/2 py-16 bg-white border-y border-slate-100 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy-950 text-center tracking-tight">Specialized Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy-950 text-center tracking-tight">Specialized Security Stack</h2>
           </div>
 
           <div className="relative w-full flex overflow-hidden">
-            {/* Soft edge masking for smooth entry/exit */}
             <div className="absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
@@ -236,17 +234,16 @@ export default function DigitalMarketing() {
               transition={{ ease: "linear", duration: 15, repeat: Infinity }}
               className="flex items-center w-max"
             >
-              {/* Duplicate the array twice to ensure seamless infinite scrolling loop without jumps */}
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   {[
-                    { name: "Meta Ads", icon: <TrendingUp className="w-8 h-8 md:w-10 md:h-10 text-blue-600" /> },
-                    { name: "Google Ads", icon: <Search className="w-8 h-8 md:w-10 md:h-10 text-red-500" /> },
-                    { name: "ActiveCampaign", icon: <Mail className="w-8 h-8 md:w-10 md:h-10 text-cyan-500" /> },
-                    { name: "TikTok Ads", icon: <Megaphone className="w-8 h-8 md:w-10 md:h-10 text-black" /> },
-                    { name: "Buffer", icon: <Map className="w-8 h-8 md:w-10 md:h-10 text-slate-800" /> },
-                    { name: "HubSpot", icon: <Target className="w-8 h-8 md:w-10 md:h-10 text-orange-500" /> },
-                    { name: "Semrush", icon: <Activity className="w-8 h-8 md:w-10 md:h-10 text-orange-600" /> }
+                    { name: "CrowdStrike", icon: <Shield className="w-8 h-8 md:w-10 md:h-10 text-red-600" /> },
+                    { name: "Fortinet", icon: <Lock className="w-8 h-8 md:w-10 md:h-10 text-blue-800" /> },
+                    { name: "Check Point", icon: <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-blue-600" /> },
+                    { name: "Okta", icon: <Settings className="w-8 h-8 md:w-10 md:h-10 text-blue-500" /> },
+                    { name: "Palo Alto", icon: <Activity className="w-8 h-8 md:w-10 md:h-10 text-orange-500" /> },
+                    { name: "Splunk", icon: <Database className="w-8 h-8 md:w-10 md:h-10 text-black" /> },
+                    { name: "Metasploit", icon: <Terminal className="w-8 h-8 md:w-10 md:h-10 text-slate-800" /> }
                   ].map((tech, j) => (
                     <div key={j} className="flex items-center gap-4 px-10 md:px-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
                       {tech.icon}
@@ -259,13 +256,12 @@ export default function DigitalMarketing() {
           </div>
         </div>
 
-
         {/* FAQ Section */}
         <div className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-6">Frequently Asked Questions</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-10">
-              Everything you need to know about what we provide and how our process works.
+              Answers to common security questions to help you understand your protection.
             </p>
           </div>
 
@@ -315,16 +311,15 @@ export default function DigitalMarketing() {
         <section className="bg-navy-950 rounded-[4rem] p-12 md:p-20 text-center text-white relative overflow-hidden mb-24">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-grid opacity-10" />
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Looking to grow your business with <br /> Digital Marketing?</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Is your business fully protected?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-12">
-              Let’s turn your brand into a powerful online presence that attracts the right audience and delivers real, measurable results.
+              Don't wait for a breach to happen. Secure your systems, protect your data, and ensure business continuity with our professional security services.
             </p>
             <Link to="/contact" className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105 gap-2 text-lg">
-              Start Your Campaign <ArrowRight className="w-5 h-5" />
+              Get A Free Security Audit <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </section>
-
       </div>
     </div>
   );

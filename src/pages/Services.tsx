@@ -1,87 +1,103 @@
 import { motion } from 'motion/react';
-import { Megaphone, Smartphone, Briefcase, Target, Code, Search, Layout, PenTool, ShieldCheck, Users, ArrowRight, CheckCircle2, Settings, MessageSquare, TrendingUp } from 'lucide-react';
+import { Megaphone, Smartphone, Briefcase, Target, Code, Search, Layout, PenTool, ShieldCheck, Shield, Brain, Users, ArrowRight, CheckCircle2, Settings, MessageSquare, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const detailedServices = [
   {
     title: "Digital Marketing",
     icon: <Megaphone className="w-12 h-12" />,
-    desc: "At Ainovex Technologies, we deliver result-driven digital marketing strategies that help your business reach the right audience at the right time. Our approach starts with understanding your goals, target market, and competition to build a strong marketing foundation.",
-    features: ["Search Engine Optimization (SEO)", "Social Media Marketing", "Pay-Per-Click (PPC) Advertising", "Content Marketing"],
+    desc: "At Ainovex Technologies, we deliver result-driven digital marketing strategies to reach the right audience at the right time. We analyze your goals, market, and competition, then optimize SEO, ads, social media, and content for growth, engagement, and conversions.",
+    features: ["Social Media Marketing", "Content Marketing", "Pay-Per-Click (PPC) Advertising", "Email Marketing Campaigns", "Social Media Management"],
     color: "bg-accent/10 text-accent",
     path: "/digital-marketing"
   },
   {
     title: "Mobile Development",
     icon: <Smartphone className="w-12 h-12" />,
-    desc: "We design and develop mobile applications that combine smooth performance with a modern user experience. From idea to deployment, we focus on creating apps that are fast, scalable, and user-friendly. At Ainovex Technologies, our team follows a clear process of planning, designing, and development to ensure every feature adds real value.",
-    features: ["iOS & Android Apps", "Cross-Platform Development", "UI/UX Design", "App Store Optimization"],
+    desc: "We design and develop mobile apps with smooth performance and modern UX. From idea to execution, we deliver fast, scalable, and user-friendly digital solutions. We plan, design, and develop carefully, ensuring every feature adds value, boosts engagement, and growth.",
+    features: ["Custom Mobile App Development", "UI/UX Mobile Design", "App Maintenance & Support", "API Integration Services", "App Testing & Quality Assurance", "Cross-Platform Development"],
     color: "bg-accent/10 text-accent",
     path: "/mobile-development"
   },
   {
     title: "Virtual Assistance",
     icon: <Briefcase className="w-12 h-12" />,
-    desc: "Ainovex Technologies provides virtual assistance that helps businesses stay organized, efficient, and focused on growth. Our approach begins by understanding your daily tasks, workflows, and priorities to ensure seamless support. From administrative work to scheduling, communication, and data handling, everything is managed with accuracy and professionalism.",
-    features: ["Administrative Support", "Scheduling & Calendar Management", "Customer Communication", "Task Management"],
+    desc: "Ainovex Technologies provides virtual assistance to keep businesses organized, efficient, and growth-focused by managing tasks, scheduling, communication, and data handling with accuracy while acting as an extension of your team for smooth operations efficiently.",
+    features: ["Administrative Support", "Data Entry & Management", "Customer Support Assistance", "Social Media Assistance", "Research & Reporting Tasks", "Calendar & Inbox Management"],
     color: "bg-accent/10 text-accent",
     path: "/virtual-assistance"
   },
   {
     title: "Sales Funnel Development",
     icon: <Target className="w-12 h-12" />,
-    desc: "We design and optimize sales funnels that guide your audience from first interaction to final purchase with clarity and precision. Every step is carefully planned to reduce drop-offs and increase conversions through compelling content, strategic flow, and user-focused design.",
-    features: ["Lead Capture Pages", "Email Automation Sequences", "Conversion Rate Optimization (CRO)", "A/B Testing & Analytics"],
+    desc: "We design sales funnels guiding users from first interaction to purchase with clarity. Each step is optimized to reduce drop-offs and boost conversions using strategic flow, content, and data insights. At Ainovex Technologies, we build funnels that drive revenue growth.",
+    features: ["Funnel Strategy & Planning", "Landing Page Design", "Lead Capture Systems", "Email Automation Funnels", "Conversion Optimization", "Funnel Analytics & Tracking"],
     color: "bg-accent/10 text-accent",
     path: "/sales-funnel"
   },
   {
     title: "Web Development",
     icon: <Code className="w-12 h-12" />,
-    desc: "Ainovex Technologies develops high-quality websites that combine strong performance, modern design, and seamless functionality. From planning to deployment, every step is focused on creating fast, secure, and scalable web solutions tailored to your business needs.",
-    features: ["Custom Web Applications", "E-commerce Solutions", "Progressive Web Apps (PWA)", "API Integrations"],
+    desc: "Ainovex Technologies builds high-quality websites with strong performance, modern design, and smooth functionality. We create fast, secure, scalable solutions from planning to deployment, ensuring responsive design, great user experience, and real business results.",
+    features: ["Custom Web Applications", "Frontend Development", "Backend Development", "E-Commerce Development", "CMS Development", "Website Maintenance & Support"],
     color: "bg-accent/10 text-accent",
     path: "/web-development"
   },
   {
     title: "Search Engine Optimization",
     icon: <Search className="w-12 h-12" />,
-    desc: "We help businesses improve their search visibility by building strong SEO strategies that actually deliver results. Our process starts with deep keyword research, competitor analysis, and technical optimization to ensure your website is fully search-engine friendly. ",
-    features: ["Keyword Research", "On-Page Optimization", "Off-Page Optimization", "Technical SEO"],
+    desc: "We help businesses improve search visibility with strong SEO strategies. At Ainovex Technologies, we use keyword research, competitor analysis, technical SEO, content optimization, and ethical link building to increase rankings, organic traffic, and conversions. ",
+    features: ["Keyword Research", "On-Page Optimization", "Off-Page Optimization", "Technical SEO", "Content Optimization", "Link Building Strategy", "SEO Performance Tracking"],
     color: "bg-accent/10 text-accent",
     path: "/seo"
   },
   {
     title: "UI UX Design",
     icon: <Layout className="w-12 h-12" />,
-    desc: "We create intuitive and visually appealing UI/UX designs that focus on user behavior, clarity, and seamless navigation. Every interface is crafted to enhance engagement and make digital interactions simple and enjoyable. Our process includes research, wireframing, prototyping, and detailed design execution to ensure every element serves a purpose.",
-    features: ["User Research & Strategy", "Interactive Prototyping", "Responsive Web Design", "Design System Development"],
+    desc: "We create intuitive UI/UX designs focused on user behavior, clarity, and smooth navigation. Our process includes research, wireframing, prototyping, and design execution for usability. At Ainovex Technologies, we balance creativity and function for a better experience.",
+    features: ["UI Visual Design Expertise", "Usability Testing Services", "Wireframes & Interactive Prototypes", "Mobile UI Optimization", "User Research & Persona Building", "Design System Development"],
     color: "bg-accent/10 text-accent",
     path: "/ui-ux-design"
   },
   {
     title: "Graphic Design",
     icon: <PenTool className="w-12 h-12" />,
-    desc: "At Ainovex Technologies, we create visually powerful graphic designs that communicate your brand message with clarity and impact. Our process starts by understanding your brand identity, audience, and goals to ensure every design feels purposeful. From concept creation to final execution, we focus on creativity, consistency, and modern aesthetics.",
-    features: ["Logo Design", "Marketing Materials", "Digital Graphics", "Brand Consistency"],
+    desc: "At Ainovex Technologies, we create powerful graphic designs that communicate your brand clearly. We understand your identity, audience, and goals, then craft visuals with creativity, consistency, and modern style. Every design builds attention and strengthens your brand.",
+    features: ["Brand Identity Design", "Social Media Graphics", "Marketing & Advertising Designs", "UI Graphic Elements", "Print Design Solutions", "Motion Graphics Design"],
     color: "bg-accent/10 text-accent",
     path: "/graphic-design"
   },
   {
     title: "Software Quality Assurance",
     icon: <ShieldCheck className="w-12 h-12" />,
-    desc: "We focus on delivering software that performs smoothly, securely, and without errors. Our QA process includes detailed testing at every stage, from functionality and usability to performance and security. We identify issues early, ensuring your product meets the highest quality standards before launch.",
-    features: ["Manual Testing", "Automated Testing", "Performance Testing", "Security Testing"],
+    desc: "We ensure software performs smoothly, securely, and error-free. Our QA process includes functional, usability, performance, and security testing. We detect issues early using manual and automated testing for reliable user experience across all devices. Continuous.",
+    features: ["Manual Testing", "Automated Testing", "Performance Testing", "Security Testing", "Regression Testing", "Compatibility Testing", "Usability Testing"],
     color: "bg-accent/10 text-accent",
     path: "/software-qa"
   },
   {
     title: "Lead Generation",
     icon: <Users className="w-12 h-12" />,
-    desc: "We at Ainovex Technologies create powerful lead generation systems that attract the right audience and convert interest into real business opportunities. Our approach focuses on understanding your target market, crafting compelling offers, and building strategies that drive consistent inbound leads.",
-    features: ["Targeted Lead Campaigns", "SEO-Driven Lead Generation", "Social Media Lead Generation", "Content Marketing for Leads"],
+    desc: "We at Ainovex Technologies build lead generation systems that attract the right audience and turn interest into business opportunities. We understand your market, create strong offers, and run targeted campaigns to deliver quality leads and steady business growth.",
+    features: ["Target Audience Research", "High-Converting Landing Pages", "Paid Ad Campaign Management", "Email Outreach & Automation", "Lead Capture & CRM Integration", "Results Tracking & Optimization"],
     color: "bg-accent/10 text-accent",
     path: "/lead-generation"
+  },
+  {
+    title: "Cyber Security",
+    icon: <Shield className="w-12 h-12" />,
+    desc: "At Ainovex Technologies, we provide reliable cybersecurity solutions to protect your business from evolving threats. We secure systems, detect vulnerabilities, and ensure continuous monitoring to keep your data safe and operations protected. Ensuring business safety.",
+    features: ["Vulnerability Assessment", "Network Security Management", "Endpoint Protection", "Data Backup & Recovery", "Access Control Management", "Security Monitoring & Alerts"],
+    color: "bg-accent/10 text-accent",
+    path: "/cyber-security"
+  },
+  {
+    title: "Artificial Intelligence",
+    icon: <Brain className="w-12 h-12" />,
+    desc: "We develop AI solutions that automate processes, improve decision-making, and boost efficiency. At Ainovex Technologies, we analyze business needs and deliver scalable, future-ready systems with data insights, automation, and smart performance. Built for modern growth.",
+    features: ["AI Chatbot Development", "Predictive Analytics Solutions", "Process Automation Systems", "AI Data Processing", "Smart Recommendation Engines", "NLP Solutions"],
+    color: "bg-accent/10 text-accent",
+    path: "/artificial-intelligence"
   }
 ];
 

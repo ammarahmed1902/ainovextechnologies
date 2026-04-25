@@ -28,6 +28,9 @@ import UIUXDesign from './pages/UIUXDesign';
 import GraphicDesign from './pages/GraphicDesign';
 import SoftwareQA from './pages/SoftwareQA';
 import LeadGeneration from './pages/LeadGeneration';
+import CyberSecurity from './pages/CyberSecurity';
+import ArtificialIntelligence from './pages/ArtificialIntelligence';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   return (
@@ -57,6 +60,9 @@ export default function App() {
           <Route path="graphic-design" element={<GraphicDesign />} />
           <Route path="software-qa" element={<SoftwareQA />} />
           <Route path="lead-generation" element={<LeadGeneration />} />
+          <Route path="cyber-security" element={<CyberSecurity />} />
+          <Route path="artificial-intelligence" element={<ArtificialIntelligence />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

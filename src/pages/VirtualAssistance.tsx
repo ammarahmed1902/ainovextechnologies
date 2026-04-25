@@ -7,49 +7,67 @@ const subServices = [
   {
     title: "Administrative Support",
     icon: <Briefcase className="w-10 h-10" />,
-    desc: "We handle essential daily tasks including data entry, email management, and document preparation, allowing you to focus on high-level business strategy.",
-    features: ["Email & Inbox Management", "Data Entry & Processing", "Document Formatting", "Online Research"],
+    desc: "We manage key administrative tasks to keep your business organized and efficient. By handling daily operations, communication, and scheduling, we ensure accuracy, smooth workflow, and stress-free support.",
+    features: ["Email Management", "Calendar Scheduling", "Document Handling", "Task Coordination"],
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Scheduling & Calendar Management",
+    title: "Data Entry & Management",
     icon: <Calendar className="w-10 h-10" />,
-    desc: "Efficiently managing your time with strategic calendar planning, meeting coordination, and travel arrangements to ensure a smooth, organized daily schedule.",
-    features: ["Appointment Scheduling", "Meeting Coordination", "Travel Planning", "Reminder Systems"],
+    desc: "We manage accurate data entry and structured organization to keep business information updated, easily accessible, and well-maintained, ensuring smooth operations and reliable record-keeping efficiency.",
+    features: ["Data Cleaning", "Spreadsheet Management", "Record Updating", "Database Organization"],
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Customer Support & Communication",
+    title: "Customer Support & Assistance",
     icon: <Headset className="w-10 h-10" />,
-    desc: "Maintaining professional communication with your clients through phone, email, and chat. We ensure timely responses and quality support for your audience.",
-    features: ["Email Response Handling", "Live Chat Support", "Client Inquiry Management", "Customer Follow-ups"],
+    desc: "We provide professional customer support assistance to handle queries, resolve issues, and ensure smooth communication, improving client satisfaction, response time, and overall service experience quality.",
+    features: ["Live Chat Support", "Email Response Handling", "Ticket Resolution Tracking", "Customer Query Management"],
     color: "bg-green-500/10 text-green-600"
   },
   {
-    title: "Project & Task Coordination",
+    title: "Social Media Assistance",
     icon: <Settings className="w-10 h-10" />,
-    desc: "Keeping your projects on track by managing timelines, coordinating with team members, and ensuring all tasks are completed with accuracy and punctuality.",
-    features: ["Workflow Management", "Team Coordination", "Deadline Tracking", "Status Reporting"],
+    desc: "We manage social media assistance by handling posting, engagement, and scheduling tasks to maintain a consistent online presence, improve audience interaction, and support brand visibility and growth online.",
+    features: ["Profile Setup Support", "Trend Research Updates", "Influencer Coordination", "Platform Analytics Review"],
+    color: "bg-orange-500/10 text-orange-600"
+  },
+  {
+    title: "Research & Reporting Tasks",
+    icon: <Settings className="w-10 h-10" />,
+    desc: "We conduct in-depth online research and deliver structured reports that support smarter decisions. Our focus is accuracy, clarity, and actionable insights that improve efficiency and save valuable time.",
+    features: ["Market Trend Analysis", "Data Collection Tasks", "Competitor Research Reports", "Insight Documentation"],
+    color: "bg-orange-500/10 text-orange-600"
+  },
+  {
+    title: "Calendar & Inbox Management",
+    icon: <Settings className="w-10 h-10" />,
+    desc: "We manage calendars and inboxes efficiently to ensure organized scheduling, timely responses, and smooth communication, helping businesses stay productive, focused, and well-coordinated throughout the day.",
+    features: ["Appointment Coordination", "Follow-up Management", "Priority Email Handling", "Task Reminders Setup"],
     color: "bg-orange-500/10 text-orange-600"
   }
 ];
 
-const faqs = [
+const FAQs = [
   {
-    question: "What tasks can a Virtual Assistant handle?",
-    answer: "Our VAs can handle administrative work, scheduling, customer support, data entry, research, and project coordination among other digital tasks."
+    question: "Do you provide full-time or part-time assistance?",
+    answer: "Yes, we offer both full-time and part-time support based on your workload and business needs."
   },
   {
-    question: "Do I get a dedicated Virtual Assistant?",
-    answer: "Yes, we assign a dedicated assistant to your project to ensure they understand your specific business needs, tone, and workflow."
+    question: "Can I hire a virtual assistant for specific tasks only?",
+    answer: "Yes, you can hire a virtual assistant for specific tasks or projects as per your requirements."
   },
   {
-    question: "How do we communicate with the VA?",
-    answer: "Communication can be handled via Slack, email, Zoom, or any project management tool you prefer (Trello, Asana, etc.)."
+    question: "Do you work in different time zones?",
+    answer: "Yes, we work across different time zones to ensure smooth communication and task completion."
   },
   {
-    question: "What are the working hours for the VA?",
-    answer: "We offer flexible scheduling, including full-time, part-time, and project-based support tailored to your time zone requirements."
+    question: "How quickly can I get started with a virtual assistant?",
+    answer: "You can get started within a short time after sharing your requirements and finalizing the plan."
+  },
+  {
+    question: "How much does virtual assistance cost?",
+    answer: "Pricing depends on task complexity and hours required. We offer flexible plans based on your needs."
   }
 ];
 
@@ -63,10 +81,11 @@ export default function VirtualAssistance() {
   const scrollX = useTransform(scrollYProgress, [0, 1], [-500, 200]);
 
   const benefits = [
-    { title: "Cost Efficiency", desc: "Reduce overhead costs associated with full-time on-site employees." },
-    { title: "Increased Productivity", desc: "Focus on core business growth while we handle the routine tasks." },
-    { title: "24/7 Availability", desc: "Global support options ensuring your business stays active round the clock." },
-    { title: "Scalability", desc: "Easily adjust support hours as your business needs evolve." }
+    { title: "E-Commerce & Retail", desc: "We manage orders, support customers, and keep store operations organized." },
+    { title: "Real Estate", desc: "Our support handles listings, schedules, and smooth client communication." },
+    { title: "Healthcare & Clinics", desc: "Global support options ensuring your business stays active round the clock." },
+    { title: "Digital Marketing Agencies", desc: "We manage appointments, data, and communication for smooth operations." },
+    { title: "Startups & Small Businesses", desc: "We support daily tasks, research, and workflows to boost productivity." }
   ];
 
   return (
@@ -86,7 +105,7 @@ export default function VirtualAssistance() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-display font-bold text-navy-950 mb-8"
           >
-            Boost Your <span className="text-accent">Efficiency</span> With Expert Support
+            Your Trusted <span className="text-accent">Virtual Assistance</span> Supporter
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -94,7 +113,7 @@ export default function VirtualAssistance() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
           >
-            Ainovex Technologies provides professional virtual assistance to help you stay organized, save time, and focus on growing your business. We handle the operations so you can focus on the vision.
+            We provide reliable virtual assistance to manage daily tasks, streamline operations, and support business growth through organized workflows, clear communication, and efficient task handling systems.
           </motion.p>
         </div>
 
@@ -131,20 +150,20 @@ export default function VirtualAssistance() {
         {/* Process Flow Section */}
         <div className="mb-32">
           <div className="text-center mb-24">
-            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">How We Work</h2>
+            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">From Idea to Impact</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              A simple, structured process to integrate expert support into your workflow.
+              Our process transforms ideas into structured and strong outcomes
             </p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {[
-                { step: "1", title: "Assessment", desc: "Understanding tasks and requirements.", icon: <MessageSquare /> },
-                { step: "2", title: "Matching", desc: "Selecting the best VA for your needs.", icon: <Map /> },
-                { step: "3", title: "Onboarding", desc: "Setting up tools and communication.", icon: <Settings /> },
-                { step: "4", title: "Execution", desc: "Managing daily tasks and support.", icon: <Clock /> },
-                { step: "5", title: "Review", desc: "Regular feedback and quality checks.", icon: <CheckCircle /> }
+                { step: "1", title: "Planning", desc: "Service tasks are identified, priorities set, and workflows structured for smooth virtual assistance.", icon: <MessageSquare /> },
+                { step: "2", title: "Organization", desc: "Calendars, emails, and tasks are arranged systematically to maintain daily productivity and focus.", icon: <Map /> },
+                { step: "3", title: "Execution", desc: "Daily tasks are handled efficiently with timely responses, updates, and professional coordination.", icon: <Settings /> },
+                { step: "4", title: "Communication", desc: "Clear and consistent communication ensures smooth collaboration and accurate task understanding.", icon: <Clock /> },
+                { step: "5", title: "Monitoring", desc: "Work progress is tracked regularly to maintain quality, accuracy, and timely completion of tasks.", icon: <CheckCircle /> }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -167,7 +186,7 @@ export default function VirtualAssistance() {
 
         {/* Benefits Section */}
         <div ref={scrollRef} className="mb-32 overflow-hidden">
-          <h2 className="text-4xl font-display font-bold text-navy-950 mb-12">Core Benefits</h2>
+          <h2 className="text-4xl font-display font-bold text-navy-950 mb-12">Industries We’ve Worked With</h2>
           <motion.div style={{ x: scrollX }} className="flex gap-8">
             {[...benefits, ...benefits].map((benefit, i) => (
               <div key={i} className="min-w-[300px] p-8 bg-navy-950 text-white rounded-[2rem]">
@@ -182,7 +201,7 @@ export default function VirtualAssistance() {
         <div className="mb-32">
           <h2 className="text-4xl font-display font-bold text-navy-950 text-center mb-16">Frequently Asked Questions</h2>
           <div className="max-w-3xl mx-auto space-y-4">
-            {faqs.map((faq, i) => (
+            {FAQs.map((faq, i) => (
               <div key={i} className="border border-slate-100 rounded-2xl overflow-hidden bg-white shadow-sm">
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}

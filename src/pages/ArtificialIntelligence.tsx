@@ -1,77 +1,77 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
-import { Search, Megaphone, Mail, MousePointerClick, ArrowRight, CheckCircle2, PenTool, TrendingUp, MessageSquare, Map, Settings, CheckCircle, Headset, Target, Activity, Briefcase, Plus, Minus } from 'lucide-react';
+import { Brain, Cpu, Bot, BarChart3, MessageSquare, Settings, Layers, ArrowRight, CheckCircle2, Map, CheckCircle, Headset, Zap, Plus, Minus, Briefcase } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const marketingServices = [
+const aiServices = [
   {
-    title: "Search Engine Optimization (SEO)",
-    icon: <Search className="w-10 h-10" />,
-    desc: "Achieve higher rankings and drive organic traffic that converts. Our SEO strategies are built on deep keyword research, technical optimization, and high-quality content creation tailored to your industry.",
-    features: ["On-Page & Off-Page SEO", "Technical SEO Audits", "Local SEO Optimization", "Keyword & Competitor Research"],
+    title: "Custom AI Models",
+    icon: <Cpu className="w-10 h-10" />,
+    desc: "We build bespoke machine learning models designed to solve your specific business challenges. From recommendation engines to specialized classifiers, we create intelligence that adds unique value.",
+    features: ["Bespoke ML Algorithms", "Data Model Training", "Algorithm Optimization", "Feature Engineering"],
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Social Media Marketing",
-    icon: <Megaphone className="w-10 h-10" />,
-    desc: "Build a loyal community and amplify your brand's voice. We create tailored social media strategies that engage your audience, boost brand awareness, and increase meaningful interactions across all platforms.",
-    features: ["Platform-specific Strategies", "Community Management", "Content Creation & Curation", "Social Media Analytics"],
+    title: "AI Chatbots & Agents",
+    icon: <Bot className="w-10 h-10" />,
+    desc: "Elevate your customer experience with smart virtual assistants. Our bots use advanced Natural Language Processing (NLP) to understand context and provide human-like interactions at scale.",
+    features: ["NLP & NLU Integration", "Multi-platform Deployment", "Intent Recognition", "24/7 Smart Support"],
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Pay-Per-Click (PPC) Advertising",
-    icon: <MousePointerClick className="w-10 h-10" />,
-    desc: "Maximize your ROI with targeted ad campaigns. We design, launch, and optimize paid ads on Google, Meta, and LinkedIn to ensure your brand reaches high-intent buyers exactly when they are looking for you.",
-    features: ["Google Ads & Retargeting", "Social Media Ads (Meta, LinkedIn)", "A/B Testing & Optimization", "Conversion Rate Optimization"],
+    title: "Predictive Analytics",
+    icon: <BarChart3 className="w-10 h-10" />,
+    desc: "Turn your historical data into a crystal ball for your business. We develop forecasting models that predict market trends, customer behavior, and operational needs with high accuracy.",
+    features: ["Trend Forecasting", "Customer Churn Prediction", "Demand Planning", "Risk Modeling"],
     color: "bg-green-500/10 text-green-600"
   },
   {
-    title: "Email Marketing",
-    icon: <Mail className="w-10 h-10" />,
-    desc: "Turn leads into loyal customers with personalized, automated email journeys. We craft compelling email campaigns that nurture your audience, keep them informed, and drive consistent sales.",
-    features: ["Automated Drip Campaigns", "Newsletter Management", "Audience Segmentation", "Performance Tracking"],
+    title: "Process Automation (RPA)",
+    icon: <Zap className="w-10 h-10" />,
+    desc: "Eliminate repetitive tasks with intelligent automation. We combine RPA with AI to create workflows that don't just follow rules but learn and adapt to changing data and environments.",
+    features: ["Workflow Automation", "Intelligent Document Parsing", "Auto-scaling Processes", "Error Handling AI"],
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Content Marketing & Strategy",
-    icon: <PenTool className="w-10 h-10" />,
-    desc: "Engage your audience with high-quality, valuable content. We develop and distribute articles, videos, and graphics that establish your brand as an authority and drive profitable customer action.",
-    features: ["Blog & Article Writing", "Video Marketing", "Infographics & Visuals", "Distribution Strategy"],
-    color: "bg-teal-500/10 text-teal-600"
+    title: "Computer Vision",
+    icon: <Layers className="w-10 h-10" />,
+    desc: "Give your systems the power of sight. Our vision solutions enable automated quality control, facial recognition, and complex scene analysis for manufacturing, security, and retail.",
+    features: ["Object Detection", "Image Classification", "Real-time Video Analysis", "OCR & Text Extraction"],
+    color: "bg-rose-500/10 text-rose-600"
   },
   {
-    title: "Conversion Rate Optimization (CRO)",
-    icon: <TrendingUp className="w-10 h-10" />,
-    desc: "Maximize the value of your existing traffic. We analyze user behavior and implement data-driven changes to your website or landing pages to significantly increase the percentage of visitors who convert.",
-    features: ["A/B & Multivariate Testing", "User Behavior Analytics", "Landing Page Optimization", "Funnel Analysis"],
-    color: "bg-rose-500/10 text-rose-600"
+    title: "Sentiment Analysis",
+    icon: <MessageSquare className="w-10 h-10" />,
+    desc: "Understand the 'why' behind the words. We use AI to analyze customer reviews, social media mentions, and feedback to gauge public sentiment and drive data-backed improvements.",
+    features: ["Opinion Mining", "Brand Perception Tracking", "Multilingual Support", "Real-time Sentiment Alerts"],
+    color: "bg-teal-500/10 text-teal-600"
   }
 ];
 
 const faqs = [
   {
-    question: "How long does it take to see results from digital marketing?",
-    answer: "Results usually start appearing within a few weeks, but significant growth typically takes 2–3 months, depending on strategy and goals."
+    question: "How can AI benefit my small business?",
+    answer: "AI can help you automate routine tasks, provide personalized experiences to your customers, and uncover growth opportunities hidden in your data that would be impossible to find manually."
   },
   {
-    question: "Do you provide regular reports and performance updates?",
-    answer: "Yes, we provide clear and regular reports so you can track performance, progress, and campaign effectiveness at every stage."
+    question: "Is AI expensive to implement?",
+    answer: "While complex systems can be costly, we focus on scalable solutions. We identify high-impact, lower-cost AI applications first to ensure you see a fast return on your investment before scaling."
   },
   {
-    question: "How much does your digital marketing service cost?",
-    answer: "Pricing depends on your business needs, goals, and campaign scope. We offer flexible plans tailored to different budgets."
+    question: "Do I need a massive amount of data?",
+    answer: "Not necessarily. While more data often helps, many modern AI techniques like transfer learning allow us to build highly effective models using smaller, more focused datasets or pre-trained systems."
   },
   {
-    question: "What makes your digital marketing service different?",
-    answer: "We focus on data-driven strategies, personalized planning, and real business outcomes instead of generic or short-term marketing tactics."
+    question: "How do you handle AI ethics and data privacy?",
+    answer: "We prioritize transparency and data security in every AI project. Our systems are built to be explainable, and we ensure all data used for training is handled with strict adherence to privacy regulations."
   },
   {
-    question: "How do I get started with your digital marketing service?",
-    answer: "Simply reach out to us with your requirements, and our team will guide you through a quick onboarding and strategy setup process."
+    question: "How long does it take to deploy an AI solution?",
+    answer: "Deployment timelines vary based on complexity. Simple integrations can be done in weeks, while custom-trained models usually take 2-4 months from data collection to full deployment."
   }
 ];
 
-export default function DigitalMarketing() {
+export default function ArtificialIntelligence() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -82,24 +82,24 @@ export default function DigitalMarketing() {
 
   const industries = [
     {
-      title: "Technology & IT Services",
-      desc: "We’ve built scalable digital platforms for fast-growing tech companies, focusing on performance, clean architecture, and seamless user experiences. Our approach supports innovation-driven teams with solutions that adapt as their products and services evolve over time."
+      title: "Technology & Software",
+      desc: "We embed intelligence directly into software products, enabling features like automated sorting, smart recommendations, and predictive maintenance that give tech companies a competitive edge."
     },
     {
       title: "E-Commerce & Retail",
-      desc: "In the online retail space, we’ve delivered conversion-focused digital experiences that help brands attract, engage, and retain customers. Our work emphasizes smooth shopping journeys, strong visual presentation, and strategies that directly improve sales performance."
+      desc: "Our AI solutions power personalized shopping experiences, dynamic pricing models, and optimized inventory management that directly increase conversion rates and reduce operational costs."
     },
     {
-      title: "Healthcare & Wellness",
-      desc: "We’ve supported healthcare and wellness providers by creating clear, trustworthy, and easy-to-navigate digital solutions. The focus has always been on improving patient communication, simplifying information access, and building a reliable online presence that enhances credibility."
+      title: "Healthcare & Biotech",
+      desc: "We support medical researchers and providers with AI tools for diagnostic assistance, patient data analysis, and drug discovery optimization, always with a focus on precision and privacy."
     },
     {
-      title: "Real Estate",
-      desc: "For property-focused businesses, we’ve developed engaging platforms designed to present listings effectively and generate quality inquiries. Our experience includes creating structured layouts, impactful visuals, and lead-driven strategies that connect sellers with serious buyers."
+      title: "Finance & Trading",
+      desc: "In the financial world, our models analyze market signals in real-time to support smarter trading decisions and implementation of robust fraud detection systems that learn from emerging patterns."
     },
     {
-      title: "Education & Training",
-      desc: "We’ve also worked with educational organizations to improve how they connect with students digitally. Our solutions help streamline course presentation, strengthen online visibility, and create user-friendly systems that support enrollment and engagement growth."
+      title: "Manufacturing & Logistics",
+      desc: "We implement computer vision for quality control on assembly lines and AI-driven route optimization for logistics, significantly reducing waste and improving delivery efficiency."
     }
   ];
 
@@ -113,14 +113,14 @@ export default function DigitalMarketing() {
             animate={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-bold tracking-widest uppercase mb-6"
           >
-            Digital Marketing
+            Artificial Intelligence
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-display font-bold text-navy-950 mb-8"
           >
-            Drive <span className="text-accent">Real Growth</span> With Data-Driven Marketing
+            Smart Solutions for a <span className="text-accent">Scalable Future</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -128,13 +128,13 @@ export default function DigitalMarketing() {
             transition={{ delay: 0.1 }}
             className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
           >
-            We don't just increase your visibility; we build strategic digital marketing campaigns that attract the right audience, generate high-quality leads, and convert them into loyal customers.
+            We develop AI solutions that automate processes, improve decision-making, and boost efficiency. At Ainovex Technologies, we analyze business needs and deliver scalable, future-ready systems with data insights, automation, and smart performance.
           </motion.p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-32">
-          {marketingServices.map((service, i) => (
+          {aiServices.map((service, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -162,24 +162,23 @@ export default function DigitalMarketing() {
           ))}
         </div>
 
-
         {/* Process Flow Section */}
         <div className="mb-32">
           <div className="text-center mb-24">
-            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our Process Flow</h2>
+            <h2 className="text-4xl font-display font-bold text-navy-950 mb-6">Our AI Lifecycle</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-              A structured and transparent approach from start to finish.
+              From data collection to model deployment, we ensure a seamless and effective AI journey.
             </p>
           </div>
 
           <div className="relative max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
               {[
-                { step: "1", title: "Discussion", desc: "Understand client needs, objectives, and goals.", icon: <MessageSquare /> },
-                { step: "2", title: "Planning", desc: "Strategize the approach, timeline, and resources required.", icon: <Map /> },
-                { step: "3", title: "Implementation", desc: "Execute the plan, developing or delivering the solution.", icon: <Settings /> },
-                { step: "4", title: "Testing", desc: "Validate the solution for effectiveness and reliability.", icon: <CheckCircle /> },
-                { step: "5", title: "Support", desc: "Provide ongoing assistance, maintenance, and training.", icon: <Headset /> }
+                { step: "1", title: "Data Audit", desc: "Evaluate available data sources and quality for model training.", icon: <Layers /> },
+                { step: "2", title: "Strategy", desc: "Define the right AI approach and model architecture for your goals.", icon: <Settings /> },
+                { step: "3", title: "Training", desc: "Develop, train, and iterate on models to achieve peak performance.", icon: <Brain /> },
+                { step: "4", title: "Validation", desc: "Rigorous testing to ensure model accuracy and unbiased results.", icon: <CheckCircle /> },
+                { step: "5", title: "Deployment", desc: "Seamless integration of AI into your production environment.", icon: <Zap /> }
               ].map((item, i) => (
                 <motion.div
                   key={i}
@@ -199,9 +198,10 @@ export default function DigitalMarketing() {
             </div>
           </div>
         </div>
+
         {/* Industries Section */}
         <div ref={scrollRef} className="mb-32 relative">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-12 text-left tracking-tight">Industries We’ve Worked With</h1>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-12 text-left tracking-tight">Industries We Empower</h1>
           <div className="w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden py-4">
             <motion.div style={{ x: scrollX }} className="flex gap-6 md:gap-8 px-6 md:px-12 w-max cursor-grab active:cursor-grabbing">
               {industries.map((ind, i) => (
@@ -219,15 +219,13 @@ export default function DigitalMarketing() {
           </div>
         </div>
 
-
-        {/* Specialized Technologies (Auto Scrolling) */}
+        {/* Specialized Technologies */}
         <div className="mb-32 w-[100vw] relative left-1/2 -translate-x-1/2 py-16 bg-white border-y border-slate-100 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 mb-12">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy-950 text-center tracking-tight">Specialized Technologies</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-navy-950 text-center tracking-tight">AI & Machine Learning Stack</h2>
           </div>
 
           <div className="relative w-full flex overflow-hidden">
-            {/* Soft edge masking for smooth entry/exit */}
             <div className="absolute inset-y-0 left-0 w-16 md:w-40 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 md:w-40 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
@@ -236,17 +234,16 @@ export default function DigitalMarketing() {
               transition={{ ease: "linear", duration: 15, repeat: Infinity }}
               className="flex items-center w-max"
             >
-              {/* Duplicate the array twice to ensure seamless infinite scrolling loop without jumps */}
               {[...Array(2)].map((_, i) => (
                 <div key={i} className="flex items-center">
                   {[
-                    { name: "Meta Ads", icon: <TrendingUp className="w-8 h-8 md:w-10 md:h-10 text-blue-600" /> },
-                    { name: "Google Ads", icon: <Search className="w-8 h-8 md:w-10 md:h-10 text-red-500" /> },
-                    { name: "ActiveCampaign", icon: <Mail className="w-8 h-8 md:w-10 md:h-10 text-cyan-500" /> },
-                    { name: "TikTok Ads", icon: <Megaphone className="w-8 h-8 md:w-10 md:h-10 text-black" /> },
-                    { name: "Buffer", icon: <Map className="w-8 h-8 md:w-10 md:h-10 text-slate-800" /> },
-                    { name: "HubSpot", icon: <Target className="w-8 h-8 md:w-10 md:h-10 text-orange-500" /> },
-                    { name: "Semrush", icon: <Activity className="w-8 h-8 md:w-10 md:h-10 text-orange-600" /> }
+                    { name: "PyTorch", icon: <Cpu className="w-8 h-8 md:w-10 md:h-10 text-orange-600" /> },
+                    { name: "TensorFlow", icon: <Layers className="w-8 h-8 md:w-10 md:h-10 text-orange-500" /> },
+                    { name: "OpenAI", icon: <Bot className="w-8 h-8 md:w-10 md:h-10 text-emerald-600" /> },
+                    { name: "Hugging Face", icon: <Brain className="w-8 h-8 md:w-10 md:h-10 text-yellow-500" /> },
+                    { name: "scikit-learn", icon: <BarChart3 className="w-8 h-8 md:w-10 md:h-10 text-blue-500" /> },
+                    { name: "LangChain", icon: <Settings className="w-8 h-8 md:w-10 md:h-10 text-emerald-800" /> },
+                    { name: "NLTK", icon: <MessageSquare className="w-8 h-8 md:w-10 md:h-10 text-slate-800" /> }
                   ].map((tech, j) => (
                     <div key={j} className="flex items-center gap-4 px-10 md:px-16 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
                       {tech.icon}
@@ -259,13 +256,12 @@ export default function DigitalMarketing() {
           </div>
         </div>
 
-
         {/* FAQ Section */}
         <div className="mb-32">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-navy-950 mb-6">Frequently Asked Questions</h2>
             <p className="text-slate-600 text-lg max-w-2xl mx-auto mb-10">
-              Everything you need to know about what we provide and how our process works.
+              Clear answers to help you understand how AI can transform your operations.
             </p>
           </div>
 
@@ -315,16 +311,15 @@ export default function DigitalMarketing() {
         <section className="bg-navy-950 rounded-[4rem] p-12 md:p-20 text-center text-white relative overflow-hidden mb-24">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-grid opacity-10" />
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Looking to grow your business with <br /> Digital Marketing?</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Ready to lead with Artificial Intelligence?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto text-lg mb-12">
-              Let’s turn your brand into a powerful online presence that attracts the right audience and delivers real, measurable results.
+              Let's explore how AI can drive efficiency, growth, and innovation in your business. Scale your operations with smart, future-ready solutions today.
             </p>
             <Link to="/contact" className="inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-navy-950 px-10 py-5 rounded-2xl font-bold transition-all transform hover:scale-105 gap-2 text-lg">
-              Start Your Campaign <ArrowRight className="w-5 h-5" />
+              Explore AI Possibilities <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </section>
-
       </div>
     </div>
   );

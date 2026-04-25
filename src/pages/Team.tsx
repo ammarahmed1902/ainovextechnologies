@@ -90,13 +90,29 @@ export default function Team() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-10">
                   <div className="flex gap-4">
-                    <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all">
+                    <a
+                      href="https://www.linkedin.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${member.name} on LinkedIn`}
+                      className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all"
+                    >
                       <Linkedin className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all">
+                    <a
+                      href="https://x.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${member.name} on X`}
+                      className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all"
+                    >
                       <Twitter className="w-5 h-5" />
                     </a>
-                    <a href="#" className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all">
+                    <a
+                      href="mailto:hello@ainovextechnologies.com"
+                      aria-label={`Email ${member.name}`}
+                      className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-accent hover:text-navy-950 transition-all"
+                    >
                       <Mail className="w-5 h-5" />
                     </a>
                   </div>

@@ -27,7 +27,10 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-navy-950/90 backdrop-blur-md py-4 shadow-lg' : 'bg-navy-950/90 py-6'}`}>
+    <nav
+      aria-label="Primary navigation"
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-navy-950/90 backdrop-blur-md py-4 shadow-lg' : 'bg-navy-950/90 py-6'}`}
+    >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="group">
           <Logo
@@ -56,7 +59,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          type="button"
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          className="md:hidden text-white"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <X /> : <Menu />}
         </button>
       </div>

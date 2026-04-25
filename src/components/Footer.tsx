@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Github, Mail } from 'lucide-react';
+import { Linkedin, Twitter, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
@@ -14,9 +14,31 @@ export default function Footer() {
             Empowering global enterprises with cutting-edge software solutions that drive innovation and sustainable growth.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-accent transition-colors"><Linkedin className="w-5 h-5" /></a>
-            <a href="#" className="hover:text-accent transition-colors"><Twitter className="w-5 h-5" /></a>
-            <a href="#" className="hover:text-accent transition-colors"><Github className="w-5 h-5" /></a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Ainovex Technologies on LinkedIn"
+              className="hover:text-accent transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit Ainovex Technologies on X"
+              className="hover:text-accent transition-colors"
+            >
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:hello@ainovextechnologies.com"
+              aria-label="Email Ainovex Technologies"
+              className="hover:text-accent transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
@@ -53,11 +75,11 @@ export default function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-navy-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-        <p>© 2026 Ainovex Technologies. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Ainovex Technologies. All rights reserved.</p>
         <div className="flex gap-8">
-          <a href="#" className="hover:text-white">Privacy Policy</a>
-          <a href="#" className="hover:text-white">Terms of Service</a>
-          <a href="#" className="hover:text-white">Cookie Settings</a>
+          <Link to="/contact" className="hover:text-white">Privacy Policy</Link>
+          <Link to="/contact" className="hover:text-white">Terms of Service</Link>
+          <Link to="/contact" className="hover:text-white">Cookie Settings</Link>
         </div>
       </div>
     </footer>
